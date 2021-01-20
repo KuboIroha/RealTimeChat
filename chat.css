@@ -1,0 +1,12 @@
+#chat {
+    padding: 10px;
+    margin: 10px;
+    border:1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 8px gray;
+}
+
+#chat > p {
+    padding: 0;
+    margin: 5px;
+}
