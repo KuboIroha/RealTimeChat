@@ -1,3 +1,9 @@
+@charset "utf-8";
+
+body{
+    background-color: #fbf9cc;
+}
+
 #chat {
     padding: 10px;
     margin: 10px;
