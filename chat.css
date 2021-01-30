@@ -2,9 +2,11 @@
 
 body{
     background-color: #fbf9cc;
+    
 }
 
 #chat {
+    background-color: #ffffff;
     padding: 10px;
     margin: 10px;
     border:1px solid black;
@@ -15,4 +17,16 @@ body{
 #chat > p {
     padding: 0;
     margin: 5px;
+}
+
+#send{
+    background-color: #f6bb9e;
+    padding: 10;
+    margin: 5px;
+}
+
+#send:hover
+{
+    background-color: #ffffff;
+    color: #4a9b78;
 }
