@@ -6,12 +6,12 @@ body{
 }
 
 input #name:focus{
-    background-color: #ffffee;
+    background-color: #aaf;
 }
 
 input #message:focus
 {
-    background-color: #ffffee;
+    background-color: #aaf;
 }
 
 #chat {
