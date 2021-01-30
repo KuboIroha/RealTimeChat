@@ -5,6 +5,15 @@ body{
     
 }
 
+input #name:focus{
+    background-color: #ffffee;
+}
+
+input #message:focus
+{
+    background-color: #ffffee;
+}
+
 #chat {
     background-color: #ffffff;
     padding: 10px;
