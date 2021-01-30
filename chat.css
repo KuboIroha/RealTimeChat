@@ -9,7 +9,7 @@ input #name:focus{
     background-color: #aaf;
 }
 
-input #input:focus
+textarea #input:focus
 {
     background-color: #aaf;
 }
@@ -36,6 +36,7 @@ input #input:focus
 
 #send:hover
 {
+    cursor: pointer;
     background-color: #ffffff;
     color: #4a9b78;
 }
