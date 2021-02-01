@@ -13,36 +13,37 @@ window.addEventListener('DOMContentLoaded', () => {
     sendBtn.addEventListener('click', () => {
         ws.send(JSON.stringify(
             {
-                "name": name.value,
-                "message": input.value
+                "name": encodeURI(name.value),
+                "message": encodeURI(input.value)
             }
         ))
         
         input.value = ''
     })
 
-    // websocketƒRƒlƒNƒVƒ‡ƒ“
+    // websocketã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³
     let ws = new WebSocket('ws://18.188.218.88:9001/')
 
-    // ƒnƒ“ƒhƒ‰‚ğ’è‹`‚·‚é
-    // Ú‘±‚µ‚½‚Æ‚«
+    // ãƒãƒ³ãƒ‰ãƒ©ã‚’å®šç¾©ã™ã‚‹
+    // æ¥ç¶šã—ãŸã¨ã
     ws.onopen = function () {
         out('Joined')
     }
 
-    // ƒT[ƒo‚©‚çóM‚µ‚½‚Æ‚«
+    // ã‚µãƒ¼ãƒã‹ã‚‰å—ä¿¡ã—ãŸã¨ã
     ws.onmessage = function (e) {
-        //JSON•¶š—ñ‚ª•Ô‚Á‚Ä‚­‚é‚Ì‚ÅƒIƒuƒWƒFƒNƒg‚É•ÏŠ·
+        //JSONæ–‡å­—åˆ—ãŒè¿”ã£ã¦ãã‚‹ã®ã§ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å¤‰æ›
         let message = JSON.parse(e.data)
-        out(message['name'] + ' >>> ' + message['message'])
+        let ms = message['name'] + ' >>> ' + message['message']
+        out(ms)
     }
 
-    // ’ÊM‚ğ•Â‚¶‚½‚Æ‚«
+    // é€šä¿¡ã‚’é–‰ã˜ãŸã¨ã
     ws.onclose = function () {
         out('Leave')
     }
 
-    // ƒT[ƒo‚©‚ç’ÊM‚ª“râ‚¦‚½‚Æ‚«
+    // ã‚µãƒ¼ãƒã‹ã‚‰é€šä¿¡ãŒé€”çµ¶ãˆãŸã¨ã
     ws.onerror = function () {
         out('Error')
     }
