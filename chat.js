@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     ws.onmessage = function (e) {
         //JSON文字列が返ってくるのでオブジェクトに変換
         let message = JSON.parse(e.data)
-        let ms = message['name'] + ' >>> ' + message['message']
+        let ms = decodeURI(message['name'] + ' >>> ' + message['message'])
         out(ms)
     }
 
