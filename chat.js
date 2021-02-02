@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const name = document.getElementById("name")
-    const input = document.getElementById("input")
+    const message = document.getElementById("input")
     const sendBtn = document.getElementById("send")
     const msgBox = document.getElementById("chat")
 
@@ -14,15 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
         ws.send(JSON.stringify(
             {
                 "name": encodeURI(name.value),
-                "message": encodeURI(input.value)
+                "message": encodeURI(message.value)
             }
         ))
         
-        input.value = ''
+        message.value = ''
     })
 
     // websocketコネクション
-    let ws = new WebSocket('ws://18.188.218.88:9001/')
+    let ws = new WebSocket('ws://' + location.hostname + ':9001/')
 
     // ハンドラを定義する
     // 接続したとき
@@ -38,13 +38,8 @@ window.addEventListener('DOMContentLoaded', () => {
         out(ms)
     }
 
-    // 通信を閉じたとき
-    ws.onclose = function () {
-        out('Leave')
-    }
-
     // サーバから通信が途絶えたとき
     ws.onerror = function () {
-        out('Error')
+        out('Server Error')
     }
 })
