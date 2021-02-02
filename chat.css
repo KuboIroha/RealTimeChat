@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+body{
+    background-color: #fbf9cc;
+    
+}
+
+input #name:focus{
+    background-color: #aaf;
+}
+
+textarea #input:focus
+{
+    background-color: #aaf;
+}
+
+#chat {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    border:1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 8px gray;
+}
+
+#chat > p {
+    padding: 0;
+    margin: 5px;
+}
+
+#send{
+    background-color: #f6bb9e;
+    padding: 10;
+    margin: 5px;
+}
+
+#send:hover
+{
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #4a9b78;
+}

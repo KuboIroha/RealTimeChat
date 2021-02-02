@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
-    <meta charset="utf-8">
-    <title>TestRepository</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat-websocket-test</title>
+    <link rel="stylesheet" type="text/css" href="chat.css" media="all">
+    <script type="text/javascript" src="chat.js"></script>
 </head>
+
 <body>
-    <h1>HOGEHOGE</h1>
+    <table>
+        <tr>
+            <td><p>name : </p></td>
+            <td><input type="text" id="name" required></td>
+        </tr>
+        <tr>
+            <td>message : </td>
+            <td><textarea name ="comment" rows="4" cols="40" id="input" required> </textarea> <input type="button" id="send" value="send"></td>
+        </tr>
+        <table>
+    <div id="chat"></div>
 </body>
+
 </html>
